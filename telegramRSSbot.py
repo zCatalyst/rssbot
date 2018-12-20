@@ -120,14 +120,14 @@ def rss_monitor(bot, job):
 
 
 def cmd_test(bot, update, args):
-    url = "https://www.j316gallery.com"
+    url = "https://www.ebay.com.sg/sch/m.html?_nkw=&_armrs=1&_ipg=&_from=&_ssn=j316gallery&_sop=10&_rss=1"
     rss_d = feedparser.parse(url)
     rss_d.entries[0]['link']
     bot.send_message(chat_id=chatid, text=(rss_d.entries[0]['link']))
     
 def cmd_revive(bot, update):
     update.message.reply_text(
-        "Eh! I'm alive! >--> Ready to start hunting >-->")
+        "Eh! I'm alive!")
 
 
 def init_sqlite():
