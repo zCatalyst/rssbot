@@ -120,10 +120,14 @@ def rss_monitor(bot, job):
 
 
 def cmd_test(bot, update, args):
-    url = "Ehh i'm online! >--> Ready to hunt >--> Test URL: https://www.j316gallery.com"
+    url = "https://www.j316gallery.com"
     rss_d = feedparser.parse(url)
     rss_d.entries[0]['link']
     bot.send_message(chat_id=chatid, text=(rss_d.entries[0]['link']))
+    
+def cmd_revive(bot, update):
+    update.message.reply_text(
+        "Eh! I'm alive! >--> Ready to start hunting >-->")
 
 
 def init_sqlite():
@@ -142,6 +146,7 @@ def main():
     dp.add_handler(CommandHandler("test", cmd_test, pass_args=True))
     dp.add_handler(CommandHandler("list", cmd_rss_list))
     dp.add_handler(CommandHandler("remove", cmd_rss_remove, pass_args=True))
+    dp.add_handler(CommandHandler("revive", cmd_revive))
 
     # try to create a database if missing
     try:
