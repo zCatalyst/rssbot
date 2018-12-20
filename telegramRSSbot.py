@@ -102,7 +102,7 @@ def cmd_help(bot, update):
         "\n/add title http://www(.)RSS-URL(.)com" +
         "\n/remove !Title! removes the RSS link"
         "\n/list Lists all the titles and the RSS links from the DB"
-        "\n/test Inbuilt command that fetches a post from Reddits RSS.")
+        "\n/test Check if bot is alive.")
 
 
 def rss_monitor(bot, job):
@@ -120,7 +120,7 @@ def rss_monitor(bot, job):
 
 
 def cmd_test(bot, update, args):
-    url = "https://www.reddit.com/r/funny/.rss"
+    url = "Ehh i'm online! >--> Ready to hunt >--> Test URL: https://www.j316gallery.com"
     rss_d = feedparser.parse(url)
     rss_d.entries[0]['link']
     bot.send_message(chat_id=chatid, text=(rss_d.entries[0]['link']))
